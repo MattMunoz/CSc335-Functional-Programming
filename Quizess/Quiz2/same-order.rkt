@@ -1,0 +1,5 @@
+(define (s-o? m n)
+  (cond ((zero? m) #f)
+        ((zero? n) #t)
+        ((= (modulo m 10) (modulo n 10)) (s-o? (quotient m 10) (quotient n 10)))
+        (else (s-o? (quotient m 10) n))))

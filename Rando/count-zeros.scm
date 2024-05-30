@@ -1,0 +1,6 @@
+(define (num-zeros x)
+  (define (count-zero x count)
+    (cond ((zero? (quotient x 10)) count)
+          ((= (modulo x 10) 0)  (+ 1 (num-zeros (quotient x 10))))
+          (else (num-zeros (quotient x 10)))))
+  (count-zero x 0))
